@@ -92,6 +92,6 @@ TextChart.prototype.addStyle = function() {
 		})
 	}
 	 */
-	self.div.style('background-color', "#ceff7a")
+	self.div.style('background-color', "#ffed7a")
 	self.div.style('height', $('#' + self.settings.id + '-div').height() + 'px')
 }
