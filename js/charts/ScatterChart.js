@@ -82,7 +82,7 @@ ScatterChart.prototype.getLimits = function() {
 	}
 	var values = []
 	limits.y.min = 0//self.settings.showZero == true ? 0 : d3.min(self.settings.data, function(d) {return d.y})
-	limits.y.max = 1//d3.max(self.settings.data, function(d) {return d.y})
+	limits.y.max = 1.1//d3.max(self.settings.data, function(d) {return d.y})
 	return limits
 }
 
@@ -132,7 +132,7 @@ ScatterChart.prototype.drawLegend = function() {
 ScatterChart.prototype.drawCategoricalLegend = function() {
 	var self = this
 	var x =  self.xScale.range()[1] + self.settings.margin.left + 40
-	var y = 800
+	var y = 0
 	if(self.settings.colorVar == 'turkish' || self.settings.colorVar == 'kurdish'|| self.settings.colorVar == 'civilians') legendData = d3.keys(["No casualties", ">=1 casualties"]) //d3.keys({"No casualties":1, ">=1 casualties":2})
 	else legendData = d3.keys(self.settings.colorLabels)
 	legendData.unshift("title")
