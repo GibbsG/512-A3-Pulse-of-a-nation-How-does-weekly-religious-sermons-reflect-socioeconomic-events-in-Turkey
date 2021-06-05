@@ -132,7 +132,7 @@ ScatterChart.prototype.drawLegend = function() {
 ScatterChart.prototype.drawCategoricalLegend = function() {
 	var self = this
 	var x =  self.xScale.range()[1] + self.settings.margin.left + 40
-	var y = 10
+	var y = 800
 	if(self.settings.colorVar == 'turkish' || self.settings.colorVar == 'kurdish'|| self.settings.colorVar == 'civilians') legendData = d3.keys(["No casualties", ">=1 casualties"]) //d3.keys({"No casualties":1, ">=1 casualties":2})
 	else legendData = d3.keys(self.settings.colorLabels)
 	legendData.unshift("title")

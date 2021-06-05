@@ -423,6 +423,7 @@ Chart.prototype.defineFunctions = function() {
 				return self.settings.legend.rectWidth - 10
 			return self.settings.legend.rectWidth + 5
 		})
+		// .attr('y', self.settings.legend.rectHeight/2 + 5)
 		.attr('y', self.settings.legend.rectHeight/2 + 5)
 		.attr('fill', function(d) {
 			// if (d == 'title')
