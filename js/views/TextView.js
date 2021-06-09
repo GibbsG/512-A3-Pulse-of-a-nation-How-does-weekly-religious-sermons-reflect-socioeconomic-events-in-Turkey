@@ -3,7 +3,7 @@ var TextView = function(sets) {
 	var self = this
 	defaults = {
 		xVar:'date',
-		yVar:'Topic 2',
+		yVar:'Topic 10',
 		radiusVar:'turkish',
 		colorVar:'turkish',
 		minRadius:5,
@@ -15,7 +15,8 @@ var TextView = function(sets) {
 	}
 	topicsObj = {}
 	topics.map(function(d){
-		topicsObj[d.name] = d.name + ' (' + d.list + ')'
+		
+		topicsObj[d.name] = ' (' + d.list + ')'
 	})
 	var initSettings = $.extend(false, defaults, sets)
 	self.init(initSettings)
@@ -196,7 +197,7 @@ TextView.prototype.buildControls = function() {
 		id: 'yVar',
 		text: 'Y Axis:',
 		type: 'select',
-		options: [{id:'Topic 10', text:topicsObj['Topic 10']}, {id:'Topic 9', text:topicsObj['Topic 9']} , {id:'Topic 2', text:topicsObj['Topic 2']}],
+		options: [{id:'Topic 10', text:'Nationalism'+topicsObj['Topic 10']}, {id:'Topic 6', text:'Education' + topicsObj['Topic 6']} , {id:'Topic 2', text:'Family'+topicsObj['Topic 2']}],
 		default:self.settings.yVar
 	}
 
@@ -206,7 +207,7 @@ TextView.prototype.buildControls = function() {
 		id: 'radiusVar',
 		text: 'Radius:',
 		type: 'select',
-		options: [{id:'none', text:'none'}, {id:'civilians', text:'civilians'}, {id:'turkish', text:'turkish'},{id:'kurdish', text:'kurdish'}, {id:'Topic 10', text:topicsObj['Topic 10']},   {id:'Topic 9', text:topicsObj['Topic 9']} , {id:'Topic 2', text:topicsObj['Topic 2']}],
+		options: [ {id:'civilians', text:'civilians'}, {id:'turkish', text:'turkish'},{id:'kurdish', text:'kurdish'}],
 		
 		default:self.settings.radiusVar
 	}
@@ -216,12 +217,7 @@ TextView.prototype.buildControls = function() {
 		id: 'colorVar',
 		text: 'Color:',
 		type: 'select',
-		options:function() {
-			return self.colorValues.map(function(d){
-				var text = topicsObj[d] == undefined ? d : topicsObj[d]
-				return {id:d, text:text}
-			})
-		},
+		options: [ {id:'civilians', text:'civilians'}, {id:'turkish', text:'turkish'},{id:'kurdish', text:'kurdish'},{id:'unemployment', text:'unemployment'}],
 		default:self.settings.colorVar
 	}
 

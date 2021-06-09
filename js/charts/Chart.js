@@ -69,7 +69,16 @@ Chart.prototype.init = function(settings) {
 	self.data = self.settings.data
 	self.topicsObj = {}
 	topics.map(function(d){
-		self.topicsObj[d.name] = d.name + ' (' + d.list + ')'
+		if (d.name == 'Topic 2') {
+			self.topicsObj[d.name] ='Family (' + d.list + ')'
+		} else if (d.name == 'Topic 6') {
+			self.topicsObj[d.name] ='Education (' + d.list + ')'
+		}else if (d.name == 'Topic 10') {
+			self.topicsObj[d.name] ='Nationalism (' + d.list + ')'
+		} else {
+			self.topicsObj[d.name] =' (' + d.list + ')'
+		}
+		
 	})
 	self.defineFunctions()
 	self.build()
