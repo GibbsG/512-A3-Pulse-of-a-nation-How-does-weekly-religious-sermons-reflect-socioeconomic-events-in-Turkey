@@ -82,7 +82,7 @@ ScatterChart.prototype.getLimits = function() {
 	}
 	var values = []
 	limits.y.min = 0//self.settings.showZero == true ? 0 : d3.min(self.settings.data, function(d) {return d.y})
-	limits.y.max = 1.1//d3.max(self.settings.data, function(d) {return d.y})
+	limits.y.max = 1.2//d3.max(self.settings.data, function(d) {return d.y})
 	return limits
 }
 
